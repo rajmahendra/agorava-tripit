@@ -4,3 +4,13 @@
 *.jar
 *.war
 *.ear
+
+# Folders #
+target
+
+# IDE Related #
+.project
+.settings/
+.classpath
+
+
