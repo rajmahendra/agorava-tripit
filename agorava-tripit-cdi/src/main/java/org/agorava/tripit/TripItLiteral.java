@@ -11,5 +11,5 @@ import javax.enterprise.util.AnnotationLiteral;
  * @author hegdera
  */
 public class TripItLiteral extends AnnotationLiteral<TripIt> implements TripIt {
-    
+    public static TripItLiteral INSTANCE = new TripItLiteral();
 }

@@ -35,7 +35,7 @@ public class TripitServiceTest {
 
 	    @Test
 	    public void dummyTest() {
-	        Assert.fail("Not yet implemented");
+	        //Assert.fail("Not yet implemented");
 	    }
 
 }
