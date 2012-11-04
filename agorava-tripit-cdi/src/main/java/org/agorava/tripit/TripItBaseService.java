@@ -4,25 +4,30 @@
  */
 package org.agorava.tripit;
 
-import java.lang.annotation.Annotation;
-import org.agorava.core.cdi.AbstractSocialNetworkService;
+import javax.inject.Inject;
+import org.agorava.core.api.oauth.OAuthService;
+import org.agorava.core.cdi.AbstractSocialMediaApi;
 
 /**
  *
  * @author hegdera
  */
-public class TripItBaseService extends AbstractSocialNetworkService {
+public class TripItBaseService extends AbstractSocialMediaApi {
     
      public static String API_ROOT = "https://api.tripit.com/v1/";
     
+    @Inject
+    @TripIt
+    private OAuthService service;
+
     @Override
-    public Annotation getQualifier() {
-        return TripItLiteral.INSTANCE;
+    public String buildUri(String uri) {
+        return API_ROOT + uri;
     }
 
     @Override
-    public String getApiRootUrl() {
-        return API_ROOT;
+    public OAuthService getService() {
+        return service;
     }
     
 }

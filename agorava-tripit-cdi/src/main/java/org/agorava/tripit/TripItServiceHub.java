@@ -5,13 +5,10 @@
 package org.agorava.tripit;
 
 import java.lang.annotation.Annotation;
-import javax.enterprise.event.Observes;
+import java.util.logging.Logger;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
-import org.agorava.core.api.event.OAuthComplete;
-import org.agorava.core.api.event.SocialEvent;
 import org.agorava.core.cdi.AbstractSocialMediaApiHub;
-import org.jboss.solder.logging.Logger;
 
 /**
  *
@@ -27,7 +24,7 @@ public class TripItServiceHub extends AbstractSocialMediaApiHub {
     @Inject
     Instance<TripItBaseService> services;
 
-    @Override
+  
     public Annotation getQualifier() {
         return TripItLiteral.INSTANCE;
     }
